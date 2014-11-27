@@ -7,7 +7,7 @@ before_install:
   - source ~/travis-perl-helpers/init
   - build-perl
   - perl -V
-  - CONFIGURE_DEPS=DBI build-dist
+  - cpanm -n DBI
+  - build-dist
   - cd $BUILD_DIR             # $BUILD_DIR is set by the build-dist command
-  - perl -V
   - perl -MDBI -e 'print DBI->VERSION, "\n"'
