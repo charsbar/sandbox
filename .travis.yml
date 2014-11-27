@@ -3,12 +3,9 @@ perl:
   - "5.8.1"
 #  - "blead"
 before_install:
-  - git clone git://github.com/travis-perl/helpers ~/travis-perl-helpers
+  - git clone git://github.com/charsbar/helpers ~/travis-perl-helpers -b configure_deps
   - source ~/travis-perl-helpers/init
   - build-perl
   - perl -V
-  - cpan-install DBI
-  - perl -MDBI -e 'print DBI->VERSION, "\n"'
-  - perldoc -l DBI
-  - build-dist
+  - CONFIGURE_DEPS=DBI build-dist
   - cd $BUILD_DIR             # $BUILD_DIR is set by the build-dist command
