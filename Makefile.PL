@@ -13,6 +13,9 @@ my %params = (
   ABSTRACT => 'sandbox',
   VERSION => '0.01',
   AUTHOR => 'charsbar',
+  PREREQ_PM => {
+    'ExtUtils::MakeMaker' => '6.31',
+  },
 );
 
 WriteMakefile(%params);
