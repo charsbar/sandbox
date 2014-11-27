@@ -1,7 +1,7 @@
 language: perl
 perl:
   - "5.8.1"
-#  - "blead"
+  - "blead"
 before_install:
   - git clone git://github.com/charsbar/helpers ~/travis-perl-helpers -b configure_deps
   - source ~/travis-perl-helpers/init
