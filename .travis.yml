@@ -3,7 +3,7 @@ perl:
   - "5.8.1"
   - "blead"
 before_install:
-  - git clone git://github.com/charsbar/helpers ~/travis-perl-helpers -b use_perl_explicitly_fix
+  - git clone git://github.com/charsbar/helpers ~/travis-perl-helpers -b use_perl_explicitly
   - source ~/travis-perl-helpers/init
   - build-perl
   - perl -V
