@@ -9,11 +9,11 @@ perl:
   - "5.8.8@moo"
   - "blead"
 before_install:
-  - git clone git://github.com/charsbar/helpers ~/travis-perl-helpers -b use_perl_explicitly
+  - git clone git://github.com/charsbar/helpers ~/travis-perl-helpers -b use_perl_explicitly_fix
   - source ~/travis-perl-helpers/init
   - build-perl
   - perl -V
-  - cpanm -n DBI
+  - cpan-install DBI
   - build-dist
   - cd $BUILD_DIR             # $BUILD_DIR is set by the build-dist command
   - perl -MDBI -e 'print DBI->VERSION, "\n"'
