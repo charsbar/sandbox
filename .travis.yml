@@ -10,4 +10,4 @@ before_install:
   - CONFIGURE_DEPS=DBI build-dist
   - cd $BUILD_DIR             # $BUILD_DIR is set by the build-dist command
   - perl -V
-  - perldoc -l DBI
+  - perl -MDBI -e 'print DBI->VERSION, "\n"'
