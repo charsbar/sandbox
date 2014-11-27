@@ -9,3 +9,4 @@ before_install:
   - perl -V
   - CONFIGURE_DEPS=DBI build-dist
   - cd $BUILD_DIR             # $BUILD_DIR is set by the build-dist command
+  - perl -V
