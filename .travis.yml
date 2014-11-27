@@ -1,12 +1,13 @@
 language: perl
 perl:
   - "5.8.1"
-  - "blead"
+#  - "blead"
 before_install:
   - git clone git://github.com/travis-perl/helpers ~/travis-perl-helpers
   - source ~/travis-perl-helpers/init
   - build-perl
   - perl -V
+  - local-lib
   - cpan-install DBI
   - perl -MDBI -e 'print DBI->VERSION, "\n"'
   - build-dist
