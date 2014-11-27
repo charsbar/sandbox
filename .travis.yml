@@ -10,5 +10,6 @@ before_install:
   - local-lib
   - cpan-install DBI
   - perl -MDBI -e 'print DBI->VERSION, "\n"'
+  - perldoc -l DBI
   - build-dist
   - cd $BUILD_DIR             # $BUILD_DIR is set by the build-dist command
