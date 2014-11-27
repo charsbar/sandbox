@@ -7,7 +7,6 @@ before_install:
   - source ~/travis-perl-helpers/init
   - build-perl
   - perl -V
-  - local-lib
   - cpan-install DBI
   - perl -MDBI -e 'print DBI->VERSION, "\n"'
   - perldoc -l DBI
