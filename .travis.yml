@@ -1,19 +1,8 @@
 language: perl
 perl:
-  - "5.6.2"
-  - "5.8.1"
-  - "5.8.8"
-  - "5.8.8-thr"
-  - "5.8.8-mb"
-  - "5.8.8-dbg"
-  - "5.8.8@moo"
-  - "blead"
+  - "5.8"
+env:
+  - DBI_VERSION=
+  - DBI_VERSION=1.58
 before_install:
-  - git clone git://github.com/charsbar/helpers ~/travis-perl-helpers -b use_perl_explicitly_fix
-  - source ~/travis-perl-helpers/init
-  - build-perl
-  - perl -V
-  - cpan-install DBI
-  - build-dist
-  - cd $BUILD_DIR             # $BUILD_DIR is set by the build-dist command
-  - perl -MDBI -e 'print DBI->VERSION, "\n"'
+  - test $DBI_VERSION && cpanm -n DBI@$DBI_VERSION : cpanm -n DBI
