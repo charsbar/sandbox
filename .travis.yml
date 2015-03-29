@@ -1,8 +1,12 @@
 language: perl
 perl:
   - "5.8"
+  - "5.20"
 env:
   - DBI_VERSION=
-  - DBI_VERSION=1.58
+matrix:
+  include:
+    - perl: 5.8
+      env: DBI_VERSION=1.58
 before_install:
   - test $DBI_VERSION && cpanm -n DBI@$DBI_VERSION || cpanm -n DBI
