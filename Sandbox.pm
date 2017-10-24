@@ -4,6 +4,6 @@ our $VERSION = '0.01';
 
 use DBI;
 
-print $INC{"DBI.pm"}, "\n";
+warn "DBI from $INC{'DBI.pm'}\n";
 
 1;
