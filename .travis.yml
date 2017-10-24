@@ -1,10 +1,10 @@
 language: perl
 env:
   matrix:
-    - TEST_COMMAND="prove -Mlocal::lib -l t"
+    - TEST_COMMAND="prove -l t"
 
 install:
   - cpanm -n App::cpm
   - cpm install DBI
 
-script: $TEST_COMMAND
+script: HARNESS_PERL_SWITCHES=-Mlocal::lib $TEST_COMMAND
