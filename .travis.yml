@@ -1,7 +1,7 @@
 language: perl
 env:
   matrix:
-    - TEST_COMMAND=prove -Mlocal::lib -l t
+    - TEST_COMMAND="prove -Mlocal::lib -l t"
 
 install:
   - cpanm -n App::cpm
