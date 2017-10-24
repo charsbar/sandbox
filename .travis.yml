@@ -9,6 +9,6 @@ install:
 
 cache:
   directories:
-    - $HOME/local
+    - ./local
 
 script: $TEST_COMMAND
