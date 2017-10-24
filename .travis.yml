@@ -1,7 +1,10 @@
 language: perl
-perl:
-  - "5.20"
 env:
   matrix:
-    - TEST_COMMAND=prove -l t
+    - TEST_COMMAND=prove -Mlocal::lib -l t
+
+install:
+  - cpanm local::lib
+  - cpanm -l DBI
+
 script: $TEST_COMMAND
